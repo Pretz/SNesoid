@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+	<string-array name="file_chooser_filters">
+		<item>.smc</item>
+		<item>.swc</item>
+		<item>.sfc</item>
+		<item>.fig</item>
+		<item>.snes</item>
+		<item>.zip</item>
+	</string-array>
+
+	<string-array name="scaling_mode_entryvalues">
+		<item>stretch</item>
+		<item>proportional</item>
+		<item>2x</item>
+		<item>original</item>
+	</string-array>
+
+	<string-array name="aspect_ratio_entryvalues">
+		<item>0</item>
+		<item>1.3333</item>
+		<item>1.25</item>
+		<item>1.6</item>
+		<item>1.7778</item>
+	</string-array>
+
+	<string-array name="fast_forward_speed_entryvalues">
+		<item>0.5x</item>
+		<item>1.5x</item>
+		<item>2x</item>
+		<item>3x</item>
+		<item>4x</item>
+		<item>8x</item>
+	</string-array>
+
+	<string-array name="frame_skip_entryvalues">
+		<item>auto</item>
+		<item>manual</item>
+	</string-array>
+
+	<string-array name="refresh_rate_entryvalues">
+		<item>default</item>
+		<item>30</item>
+		<item>40</item>
+		<item>50</item>
+		<item>60</item>
+	</string-array>
+
+	<string-array name="vkeypad_size_entryvalues">
+		<item>large</item>
+		<item>medium</item>
+		<item>small</item>
+	</string-array>
+
+	<string-array name="vkeypad_layout_entryvalues">
+		<item>bottom_bottom</item>
+		<item>bottom_top</item>
+		<item>top_bottom</item>
+		<item>top_top</item>
+	</string-array>
+
+	<string-array name="orientation_entryvalues">
+		<item>unspecified</item>
+		<item>landscape</item>
+		<item>portrait</item>
+	</string-array>
+
+	<string-array name="auto_sync_client_entryvalues">
+		<item>10</item>
+		<item>20</item>
+		<item>30</item>
+		<item>45</item>
+		<item>60</item>
+	</string-array>
+</resources>

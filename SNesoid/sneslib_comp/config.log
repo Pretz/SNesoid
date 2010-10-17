@@ -1,0 +1,225 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:569: checking for gcc
+configure:682: checking whether the C compiler (gcc  ) works
+configure:698: gcc -o conftest    conftest.c  1>&5
+configure:724: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:729: checking whether we are using GNU C
+configure:738: gcc -E conftest.c
+configure:757: checking whether gcc accepts -g
+configure:793: checking for c++
+configure:825: checking whether the C++ compiler (c++  ) works
+configure:841: c++ -o conftest    conftest.C  1>&5
+configure:867: checking whether the C++ compiler (c++  ) is a cross-compiler
+configure:872: checking whether we are using GNU C++
+configure:881: c++ -E conftest.C
+configure:900: checking whether c++ accepts -g
+configure:949: checking for size_t
+configure:974: c++ -c -g -O2  conftest.C 1>&5
+configure:1179: checking -mcpu=ultrasparc
+configure:1228: c++ -o conftest -g -O2 -mcpu=ultrasparc   conftest.C  1>&5 2>conftezt.out.2
+configure: failed program was:
+#line 1211 "configure"
+#include "confdefs.h"
+#ifdef __cplusplus
+extern "C" void exit(int);
+#endif
+
+      int foo;
+      int main(int argc, char **argv)
+      {
+        /* The following code triggs gcc:s generation of aline opcodes,
+	 * which some versions of as does not support.
+	 */
+	if (argc > 0) argc = 0;
+	return argc;
+      }
+    
+configure:1288: checking -mcpu=supersparc
+configure:1337: c++ -o conftest -g -O2 -mcpu=supersparc   conftest.C  1>&5 2>conftezt.out.2
+configure: failed program was:
+#line 1320 "configure"
+#include "confdefs.h"
+#ifdef __cplusplus
+extern "C" void exit(int);
+#endif
+
+      int foo;
+      int main(int argc, char **argv)
+      {
+        /* The following code triggs gcc:s generation of aline opcodes,
+	 * which some versions of as does not support.
+	 */
+	if (argc > 0) argc = 0;
+	return argc;
+      }
+    
+configure:1636: checking -O2
+configure:1685: c++ -o conftest -g -O2 -O2   conftest.C  1>&5 2>conftezt.out.2
+configure:1860: checking -fomit-frame-pointer
+configure:1909: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer   conftest.C  1>&5 2>conftezt.out.2
+configure:1971: checking -fno-exceptions
+configure:2020: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions   conftest.C  1>&5 2>conftezt.out.2
+configure:2082: checking -Wall
+configure:2131: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall   conftest.C  1>&5 2>conftezt.out.2
+configure:2193: checking -W
+configure:2242: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W   conftest.C  1>&5 2>conftezt.out.2
+configure:2304: checking -pedantic
+configure:2353: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic   conftest.C  1>&5 2>conftezt.out.2
+configure:2415: checking -Wno-unused-parameter
+configure:2464: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter   conftest.C  1>&5 2>conftezt.out.2
+configure:2526: checking -pipe
+configure:2575: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe   conftest.C  1>&5 2>conftezt.out.2
+configure:2637: checking -fno-rtti
+configure:2686: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe -fno-rtti   conftest.C  1>&5 2>conftezt.out.2
+configure:2931: checking if the CPU is IA32
+configure:2951: c++ -c -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe  conftest.C 1>&5
+configure:2966: checking if the OS is Linux
+configure:2985: c++ -c -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe  conftest.C 1>&5
+configure:3000: checking if the OS is HP-UX
+configure:3019: c++ -c -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe  conftest.C 1>&5
+configure:3011:2: error: #error Not Hpux.
+configure: failed program was:
+#line 3006 "configure"
+#include "confdefs.h"
+
+#ifdef __hpux
+/* */
+#else
+#error Not Hpux.
+#endif
+  
+int main() {
+
+; return 0; }
+configure:3034: checking if the OS is MS Windows
+configure:3053: c++ -c -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe  conftest.C 1>&5
+configure:3045:2: error: #error Not win32.
+configure: failed program was:
+#line 3040 "configure"
+#include "confdefs.h"
+
+#if defined (__WIN32__)
+/* */
+#else
+#error Not win32.
+#endif
+  
+int main() {
+
+; return 0; }
+configure:3289: checking how to run the C++ preprocessor
+configure:3307: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:3335: checking for zlib.h
+configure:3345: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:3373: checking if zlib.h is new enough
+configure:3386: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe   conftest.C  1>&5
+configure: In function 'int main()':
+configure:3381: warning: unused variable 'foo'
+configure:3679: checking for gzread in -lz
+configure:3701: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe   conftest.C -lz   1>&5
+configure:3755: checking for png_jmpbuf in -lpng
+configure:3777: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe   conftest.C -lpng -lz -lm  1>&5
+/tmp/ccGGnVnl.o: In function `main':
+/home/yong/src.old/snes9x-1.43-src/snes9x/configure:3774: undefined reference to `png_jmpbuf'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 3763 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+#ifdef __cplusplus
+extern "C"
+#endif
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char png_jmpbuf();
+
+int main() {
+png_jmpbuf()
+; return 0; }
+configure:3805: checking for mkstemp
+configure:3836: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe   conftest.C  1>&5
+configure:3865: checking for X
+configure:3932: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:4008: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe   conftest.C -lXt  1>&5
+configure: In function 'int main()':
+configure:4004: error: 'XtMalloc' was not declared in this scope
+configure: failed program was:
+#line 4001 "configure"
+#include "confdefs.h"
+
+int main() {
+XtMalloc()
+; return 0; }
+configure:4249: checking for strings.h
+configure:4259: c++ -E   conftest.C >/dev/null 2>conftest.out
+configure:4285: checking for sys/ioctl.h
+configure:4295: c++ -E   conftest.C >/dev/null 2>conftest.out
+configure:4323: checking for unistd.h
+configure:4333: c++ -E   conftest.C >/dev/null 2>conftest.out
+configure:4323: checking for sys/socket.h
+configure:4333: c++ -E   conftest.C >/dev/null 2>conftest.out
+configure:4323: checking for winsock.h
+configure:4333: c++ -E   conftest.C >/dev/null 2>conftest.out
+configure:4329:21: error: winsock.h: No such file or directory
+configure: failed program was:
+#line 4328 "configure"
+#include "confdefs.h"
+#include <winsock.h>
+configure:4323: checking for winsock2.h
+configure:4333: c++ -E   conftest.C >/dev/null 2>conftest.out
+configure:4329:22: error: winsock2.h: No such file or directory
+configure: failed program was:
+#line 4328 "configure"
+#include "confdefs.h"
+#include <winsock2.h>
+configure:4323: checking for WS2tcpip.h
+configure:4333: c++ -E   conftest.C >/dev/null 2>conftest.out
+configure:4329:22: error: WS2tcpip.h: No such file or directory
+configure: failed program was:
+#line 4328 "configure"
+#include "confdefs.h"
+#include <WS2tcpip.h>
+configure:4363: checking for the type of the last argument to accept
+configure:4411: c++ -c -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe   conftest.C 1>&5
+configure:4555: checking if _XOPEN_SOURCE_EXTENDED is defined
+configure:4574: c++ -c -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe   conftest.C 1>&5
+configure:4566:2: error: #error _XOPEN_SOURCE_EXTENDED not defined.
+configure: failed program was:
+#line 4561 "configure"
+#include "confdefs.h"
+
+#ifdef _XOPEN_SOURCE_EXTENDED
+/* */
+#else
+#error _XOPEN_SOURCE_EXTENDED not defined.
+#endif
+  
+int main() {
+
+; return 0; }
+configure:4598: checking for pthread.h
+configure:4608: c++ -E   conftest.C >/dev/null 2>conftest.out
+configure:4643: checking if sound is supported on this platform
+configure:4662: c++ -c -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe   conftest.C 1>&5
+configure:4686: checking for gethostbyname in -lnsl
+configure:4708: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe    -L/usr/lib -lX11 -lXext conftest.C -lnsl   -lX11 -lXext 1>&5
+configure:4736: checking for socket in -lsocket
+configure:4758: c++ -o conftest -g -O2 -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe    -L/usr/lib -lX11 -lXext conftest.C -lsocket  -lnsl  -lX11 -lXext 1>&5
+/usr/bin/ld: cannot find -lsocket
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4744 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+#ifdef __cplusplus
+extern "C"
+#endif
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char socket();
+
+int main() {
+socket()
+; return 0; }

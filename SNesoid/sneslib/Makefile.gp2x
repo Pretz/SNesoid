@@ -1,0 +1,71 @@
+COPT = -static -g -I . -I C:/devkitGP2X/include -IC:/devkitGP2X/sysroot/usr/include -O3 -D__GP2X__
+
+GCC = arm-linux-gcc
+STRIP = arm-linux-strip
+ADSASM = armasm
+
+#
+# SNES stuff (c-based)
+#
+OBJS = 2xsaiwin.o apu.o c4.o c4emu.o cheats.o cheats2.o cpu.o cpuexec.o data.o 
+OBJS += dma.o dsp1.o fxemu.o fxinst.o globals.o loadzip.o memmap.o ppu.o  
+OBJS += sdd1.o snapshot.o soundux.o spc700.o srtc.o gfx.o tile.o clip.o
+# ASM CPU Core, ripped from Yoyo's OpenSnes9X
+#
+OBJS += os9x_asm_cpu.o os9x_65c816.o spc700a.o gfx_gp2x.o
+#
+# and some asm from LJP...
+#
+OBJS += m3d_func.o spc_decode.o
+#
+# Dave's minimal SDK
+#
+OBJS += gp2x_sdk.o menu.o input.o gp2x_menutile.o gp2x_highlightbar.o \
+	gp2x_menu_header.o unzip.o ioapi.o squidgehack.o mmuhack.o
+
+#
+# and the glue code that sticks it all together :)
+#
+OBJS += main.o
+
+# Inopia's menu system, hacked for the GP2X under rlyeh's sdk
+PRELIBS = -LC:/devkitGP2X/lib -lpthread -lz $(LIBS) 
+
+all: pocketsnes.gpe
+clean: tidy pocketsnes.gpe
+
+.c.o:
+	$(GCC) $(COPT) -c $< -o $@
+
+.cpp.o:
+	$(GCC) $(COPT) -c $< -o $@
+
+# make seems to lowercase the extensions, so files with '.S' end up being passed to the compiler as '.s', which means thousands of errors.
+# this is a small workaround. 
+
+gfx_gp2x.o: gfx_gp2x.s
+	$(GCC) $(COPT) -c $< -o $@
+	
+spc700a.o: spc700a.s
+	$(GCC) $(COPT) -c $< -o $@
+
+os9x_65c816.o: os9x_65c816.s
+	$(GCC) $(COPT) -c $< -o $@
+
+osnes9xgp_asmfunc.o: osnes9xgp_asmfunc.s
+	$(GCC) $(COPT) -c $< -o $@
+
+m3d_func.o: m3d_func.S
+	$(GCC) $(COPT) -c $< -o $@
+
+spc_decode.o: spc_decode.s
+	$(GCC) $(COPT) -c $< -o $@
+
+pocketsnesd.gpe: $(OBJS)
+	$(GCC) $(COPT) $(OBJS) -static $(PRELIBS) -o $@ -lstdc++ -lm
+
+pocketsnes.gpe: pocketsnesd.gpe
+	$(STRIP) pocketsnesd.gpe -o pocketsnes.gpe
+	cp pocketsnes.gpe z:/DrPocketSnes
+tidy:
+	del *.o

@@ -1,0 +1,20 @@
+
+build information:
+cc................ gcc
+cxx............... c++
+options...........  -O2 -fomit-frame-pointer -fno-exceptions -Wall -W -pedantic -Wno-unused-parameter -pipe
+libs..............  -lz -L/usr/lib -lX11 -lXext -lnsl  -lX11 -lXext
+defines...........  -DNOASM -DZLIB -DHAVE_MKSTEMP -DHAVE_STRINGS_H -DHAVE_SYS_IOCTL_H '-DACCEPT_SIZE_T=socklen_t'
+
+features:
+new colour blender.. no
+sound support....... yes
+display system...... X11
+joystick support.... no
+SDD1 decompression.. yes
+JMA decompression... no
+debugger............ no
+DGA, vidmode........ no (forced without)
+Gz.................. yes
+using asm cores..... no (forced without)
+

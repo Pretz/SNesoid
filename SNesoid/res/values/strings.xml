@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<!-- The name of the application. -->
+	<string name="app_label">SNesoid</string>
+	<string name="emulator_service_running">SNesoid is running.</string>
+	<string name="launcher_shortcut_name">SNES game</string>
+
+	<string name="menu_edit">Edit</string>
+	<string name="menu_delete">Delete</string>
+
+	<!-- File chooser -->
+	<string name="title_select_rom">Select ROM</string>
+	<string name="no_files_in_folder">No appropriate files in this folder.</string>
+	<string name="invalid_dir">Invalid directory</string>
+	<string name="refresh">Refresh</string>
+
+	<string name="shortcut_name">Shortcut Name</string>
+	<string name="search_roms">Search ROMs</string>
+	<string name="help">Help</string>
+	<string name="load_rom_failed">Load ROM failed. Please try another file.</string>
+	<string name="rom_not_supported">ROM file type is not supported.</string>
+	<string name="replace_game_title">Replace Game</string>
+	<string name="replace_game_message">Start playing the new game? The current game <b>WILL NOT</b> be saved.</string>
+	<string name="quit_game_title">Close game</string>
+	<string name="load_state_title">Load state</string>
+	<string name="save_state_title">Save state</string>
+
+	<!-- state slots -->
+	<string name="slot_quick">Quick</string>
+	<string name="slot_nth">Slot %1$d</string>
+	<string name="slot_empty">&lt;empty&gt;</string>
+
+	<!-- Menu -->
+	<string name="settings">Settings</string>
+	<string name="reset">Reset</string>
+	<string name="netplay_connect">Net-play</string>
+	<string name="netplay_disconnect">Disconnect</string>
+	<string name="wifi_server">Wi-Fi (Server)</string>
+	<string name="wifi_client">Wi-Fi (Client))</string>
+	<string name="bluetooth_server">Bluetooth (Server) </string>
+	<string name="bluetooth_client">Bluetooth (Client)</string>
+	<string name="netplay_sync">Sync</string>
+	<string name="fast_forward">Fast forward</string>
+	<string name="no_fast_forward">Regular</string>
+	<string name="screenshot">Screenshot</string>
+	<string name="screenshot_saved">Screenshot saved to Gallery.</string>
+	<string name="save_state">Save</string>
+	<string name="load_state">Load</string>
+	<string name="cheats">Cheats</string>
+	<string name="close">Close</string>
+
+	<string name="connection_closed">Remote disconnected.</string>
+	<string name="connect_failed">Connecting to remote failed.</string>
+	<string name="protocol_incompatible">Protocol incompatible. Please update both ends to the latest version!</string>
+	<string name="wifi_not_available">Wi-Fi network is not available!</string>
+	<string name="wifi_server_listening">Waiting for connection on:\n\nIP: %1$s\nPort: %2$d</string>
+	<string name="client_connecting">Connecting to device...</string>
+	<string name="bluetooth_server_listening">Waiting for connection...\n\nClick here to make this device discoverable.</string>
+	<string name="ip_address">IP:</string>
+	<string name="port">Port:</string>
+	<string name="invalid_ip_address">Invalid IP address.</string>
+	<string name="invalid_port">Invalid port.</string>
+
+	<string name="key_profiles">Key profiles</string>
+	<string name="new_profile">New profile</string>
+	<string name="new_profile_title">Profile name</string>
+	<string name="new_profile_error">Error creating the new profile.</string>
+	<string name="load_profile">Load profile</string>
+	<string name="save_profile">Save profile</string>
+
+    <!--  DeviceListActivity -->
+	<string name="scanning">scanning for devices...</string>
+	<string name="select_device">select a device to connect</string>
+	<string name="none_paired">No devices have been paired</string>
+	<string name="none_found">No devices found</string>
+	<string name="title_paired_devices">Paired Devices</string>
+	<string name="title_other_devices">Other Available Devices</string>
+	<string name="button_scan">Scan for devices</string>
+
+	<!-- Cheats -->
+	<string name="no_cheats_help">"You haven't entered any cheats yet.\n\nTo add cheats, press <font fgcolor="#ffffffff"><b>Menu</b></font> and then <font fgcolor="#ffffffff"><b>New cheat</b></font>. Cheat codes can be:\n
+		\n<li><font fgcolor="#ffffffff"><b>Game Genie</b></font></li>
+		\n<li><font fgcolor="#ffffffff"><b>Action Replay</b></font></li>
+		\n<li><font fgcolor="#ffffffff"><b>Gold Finger</b></font></li>"
+	</string>
+	<string name="new_cheat">New cheat</string>
+	<string name="cheat_code">Code:</string>
+	<string name="cheat_name">Name (Optional):</string>
+	<string name="invalid_cheat_code">Cheat code is invalid!</string>
+
+	<!-- Settings -->
+	<string name="audio_video_settings">Audio &amp; video settings</string>
+	<string name="game_reset_needed_prompt">Will not take effect until game is reloaded</string>
+	<string name="audio_settings">Audio settings</string>
+	<string name="enable_apu">Enable APU</string>
+	<string name="enable_apu_summary">Audio Processor emulation</string>
+	<string name="enable_sound">Enable sound</string>
+	<string name="sound_volume">Sound volume</string>
+	<string name="video_settings">Video settings</string>
+	<string name="scaling_mode">Scaling mode</string>
+	<string name="aspect_ratio">Aspect ratio</string>
+	<string name="fast_forward_speed">Fast forward speed</string>
+	<string name="frame_skip_settings">Frame skip settings</string>
+	<string name="frame_skip_mode">Frame skip mode</string>
+	<string name="max_frame_skips">Max frame skips</string>
+	<string name="max_frame_skips_summary">Maximum number of consecutive frame skips</string>
+	<string name="refresh_rate">Screen refresh rate</string>
+	<string name="refresh_rate_summary">MOTO Droid 2.1 users should set this to 30!</string>
+	<string name="enable_transparency">Enable transparency</string>
+	<string name="enable_transparency_summary">More accurate emulation (would run a bit slower)</string>
+	<string name="input_settings">Input settings</string>
+	<string name="key_mappings">Key mappings</string>
+	<string name="gamepad_1">Pad 1</string>
+	<string name="gamepad_2">Pad 2</string>
+	<string name="enable">Enable</string>
+	<string name="super_scope">Super Scope</string>
+	<string name="shortcut_keys">Shortcut keys</string>
+	<string name="quick_load">Quick load</string>
+	<string name="quick_save">Quick save</string>
+	<string name="enable_light_gun">Enable Super Scope</string>
+	<string name="enable_light_gun_summary">Touch down on screen to fire!</string>
+	<string name="vkeypad_settings">Virtual keypad settings</string>
+	<string name="vkeypad_settings_summary">Setup the touchable on-screen keypad</string>
+	<string name="enable_vibrator">Vibrate on keypress</string>
+	<string name="enable_vkeypad">Virtual keypad</string>
+	<string name="multitouch_unsupported">This phone does not support multi-touch!"</string>
+	<string name="dpad_4way">Disable D-pad diagonals</string>
+	<string name="dpad_deadzone">D-pad dead zone</string>
+	<string name="multi_buttons_press">Multi-buttons press</string>
+	<string name="multi_buttons_press_summary">Disable this if it does not work properly on your phone!</string>
+	<string name="threshold">Multi-buttons threshold</string>
+	<string name="appearance">Appearance</string>
+	<string name="vkeypad_size">Controls size</string>
+	<string name="vkeypad_transparency">Controls transparency</string>
+	<string name="hide_controls">Hide controls</string>
+	<string name="hide_dpad">Hide D-pad</string>
+	<string name="hide_buttons">Hide A/B/X/Y</string>
+	<string name="hide_select_start">Hide select/start</string>
+	<string name="hide_shoulders">Hide L/R buttons</string>
+	<string name="vkeypad_layout">D-pad + buttons layout</string>
+	<string name="enable_trackball">Trackball as D-pad</string>
+	<string name="trackball_sensitivity">Trackball sensitivity</string>
+	<string name="enable_sensor">Sensor as left/right</string>
+	<string name="sensor_sensitivity">Sensor sensitivity</string>
+	<string name="netplay_settings">Net-play settings</string>
+	<string name="max_frames_ahead">Max frames ahead</string>
+	<string name="max_frames_ahead_summary">Values other than 0 may cause significant sync problem!</string>
+	<string name="auto_sync_client">Auto sync client</string>
+	<string name="auto_sync_client_interval">Auto sync interval</string>
+	<string name="other_settings">Other settings</string>
+	<string name="cheating">Cheating</string>
+	<string name="enable_cheats">Enable cheats</string>
+	<string name="user_settings">User settings</string>
+	<string name="flip_screen">Screen upside-down</string>
+	<string name="flip_screen_summary">Useful if d-pad is on the right side, but you want it on the left side</string>
+	<string name="full_screen_mode">Full screen mode</string>
+	<string name="full_screen_mode_summary">Hide system notification bar</string>
+	<string name="orientation">Orientation</string>
+	<string name="orientation_summary">The game screen orientation</string>
+	<string name="quick_load_on_start">Quick load on start</string>
+	<string name="quick_load_on_start_summary">Auto load game state on ROM start</string>
+	<string name="use_input_method">Use input method</string>
+	<string name="use_input_method_summary">Check this to enable special input device (eg. bluetooth gamepad)</string>
+	<string name="advanced">Advanced</string>
+	<string name="c_core">Use \"C\" core</string>
+	<string name="c_core_summary">Runs more games (eg. Super Mario RPG) but in slower speed</string>
+	<string name="app_about">About SNesoid</string>
+	<string name="about">About</string>
+	<string name="upgrade">Upgrade</string>
+
+	<string name="press_key_prompt">Press a hardware key...</string>
+	<string name="key_none">&lt;none&gt;</string>
+	<string name="key_unknown">&lt;unknown&gt;</string>
+	<string name="key_clear">Clear</string>
+
+	<string name="gamepad_up">Up</string>
+	<string name="gamepad_down">Down</string>
+	<string name="gamepad_left">Left</string>
+	<string name="gamepad_right">Right</string>
+	<string name="gamepad_up_left">Up+Left</string>
+	<string name="gamepad_up_right">Up+Right</string>
+	<string name="gamepad_down_left">Down+Left</string>
+	<string name="gamepad_down_right">Down+Right</string>
+	<string name="gamepad_select">Select</string>
+	<string name="gamepad_start">Start</string>
+	<string name="gamepad_A">Button A</string>
+	<string name="gamepad_B">Button B</string>
+	<string name="gamepad_X">Button X</string>
+	<string name="gamepad_Y">Button Y</string>
+	<string name="gamepad_TL">Trigger Left</string>
+	<string name="gamepad_TR">Trigger Right</string>
+	<string name="gamepad_superscope_turbo">Turbo switch</string>
+	<string name="gamepad_superscope_pause">Pause button</string>
+	<string name="gamepad_superscope_cursor">Cursor button</string>
+
+	<string-array name="exit_game_options">
+		<item>Back to game</item>
+		<item>Save and close</item>
+		<item>Close</item>
+	</string-array>
+
+	<string-array name="scaling_mode_entries">
+		<item>Stretched</item>
+		<item>Scaled</item>
+		<item>2x</item>
+		<item>Original</item>
+	</string-array>
+
+	<string-array name="aspect_ratio_entries">
+		<item>Default</item>
+		<item>4:3 (TV)</item>
+		<item>5:4</item>
+		<item>16:10</item>
+		<item>16:9</item>
+	</string-array>
+
+	<string-array name="frame_skip_entries">
+		<item>Automatic</item>
+		<item>Manual</item>
+	</string-array>
+
+	<string-array name="refresh_rate_entries">
+		<item>Default</item>
+		<item>30</item>
+		<item>40</item>
+		<item>50</item>
+		<item>60</item>
+	</string-array>
+
+	<string-array name="vkeypad_size_entries">
+		<item>Large</item>
+		<item>Medium</item>
+		<item>Small</item>
+	</string-array>
+
+	<string-array name="vkeypad_layout_entries">
+		<item>Bottom + Bottom</item>
+		<item>Bottom + Top</item>
+		<item>Top + Bottom</item>
+		<item>Top + Top</item>
+	</string-array>
+
+	<string-array name="orientation_entries">
+		<item>Unspecified</item>
+		<item>Landscape</item>
+		<item>Portrait</item>
+	</string-array>
+
+	<string-array name="auto_sync_client_entries">
+		<item>10 seconds</item>
+		<item>20 seconds</item>
+		<item>30 seconds</item>
+		<item>45 seconds</item>
+		<item>1 minute</item>
+	</string-array>
+</resources>

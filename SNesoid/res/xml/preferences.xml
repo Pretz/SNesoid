@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:androidemu="http://androidemu.com/apk/res/android">
+
+	<PreferenceScreen android:title="@string/audio_video_settings">
+		<PreferenceCategory android:title="@string/audio_settings">
+			<CheckBoxPreference android:key="apuEnabled"
+					android:title="@string/enable_apu"
+					android:summary="@string/enable_apu_summary"
+					android:defaultValue="true"/>
+
+			<CheckBoxPreference android:key="soundEnabled"
+					android:dependency="apuEnabled"
+					android:title="@string/enable_sound"
+					android:defaultValue="true"/>
+
+			<com.androidemu.snes.SeekBarPreference
+					android:key="soundVolume"
+					android:dependency="soundEnabled"
+					android:title="@string/sound_volume"
+					android:defaultValue="100"/>
+		</PreferenceCategory>
+
+		<PreferenceCategory android:title="@string/video_settings">
+			<ListPreference android:key="scalingMode"
+					android:title="@string/scaling_mode"
+					android:entries="@array/scaling_mode_entries"
+					android:entryValues="@array/scaling_mode_entryvalues"
+					android:defaultValue="proportional"/>
+
+			<ListPreference android:key="aspectRatio"
+					android:title="@string/aspect_ratio"
+					android:entries="@array/aspect_ratio_entries"
+					android:entryValues="@array/aspect_ratio_entryvalues"
+					android:defaultValue="1.3333"/>
+
+			<CheckBoxPreference android:key="transparencyEnabled"
+					android:title="@string/enable_transparency"
+					android:summary="@string/enable_transparency_summary"
+					android:defaultValue="true"/>
+		</PreferenceCategory>
+
+		<PreferenceCategory android:title="@string/frame_skip_settings">
+			<ListPreference android:key="fastForwardSpeed"
+					android:title="@string/fast_forward_speed"
+					android:entries="@array/fast_forward_speed_entryvalues"
+					android:entryValues="@array/fast_forward_speed_entryvalues"
+					android:defaultValue="2x"/>
+
+			<ListPreference android:key="frameSkipMode"
+					android:title="@string/frame_skip_mode"
+					android:entries="@array/frame_skip_entries"
+					android:entryValues="@array/frame_skip_entryvalues"
+					android:defaultValue="auto"/>
+
+			<com.androidemu.snes.SeekBarPreference
+					android:key="maxFrameSkips"
+					android:title="@string/max_frame_skips"
+					android:summary="@string/max_frame_skips_summary"
+					androidemu:maxValue="10"
+					android:defaultValue="2"/>
+
+			<ListPreference android:key="refreshRate"
+					android:title="@string/refresh_rate"
+					android:summary="@string/refresh_rate_summary"
+					android:entries="@array/refresh_rate_entries"
+					android:entryValues="@array/refresh_rate_entryvalues"
+					android:defaultValue="default"/>
+		</PreferenceCategory>
+	</PreferenceScreen>
+
+	<PreferenceScreen android:title="@string/input_settings">
+		<PreferenceScreen android:key="keyMappings"
+				android:title="@string/key_mappings">
+
+			<Preference android:key="gameGripper"
+					android:layout="@layout/game_gripper"/>
+
+			<PreferenceCategory android:title="@string/key_profiles">
+				<PreferenceScreen android:key="loadKeyProfile"
+						android:title="@string/load_profile"/>
+				<PreferenceScreen android:key="saveKeyProfile"
+						android:title="@string/save_profile"/>
+			</PreferenceCategory>
+
+			<PreferenceCategory android:key="gamepad1"
+					android:title="@string/gamepad_1"/>
+
+			<PreferenceCategory android:title="@string/gamepad_2">
+				<CheckBoxPreference android:key="enableGamepad2"
+						android:title="@string/enable"/>
+				<PreferenceScreen android:key="gamepad2"
+						android:title="@string/key_mappings"
+						android:dependency="enableGamepad2"/>
+			</PreferenceCategory>
+
+			<PreferenceCategory android:key="superScope"
+					android:title="@string/super_scope"/>
+		</PreferenceScreen>
+
+		<CheckBoxPreference android:key="enableVKeypad"
+				android:title="@string/enable_vkeypad"
+				android:defaultValue="true"/>
+
+		<PreferenceScreen android:title="@string/vkeypad_settings"
+				android:summary="@string/vkeypad_settings_summary"
+				android:dependency="enableVKeypad">
+
+			<CheckBoxPreference android:key="enableVibrator"
+					android:title="@string/enable_vibrator"
+					android:defaultValue="true"/>
+
+			<CheckBoxPreference android:key="dpad4Way"
+					android:title="@string/dpad_4way"/>
+
+			<com.androidemu.snes.SeekBarPreference
+					android:key="dpadDeadZone"
+					android:title="@string/dpad_deadzone"
+					androidemu:maxValue="4"
+					android:defaultValue="2"/>
+
+			<CheckBoxPreference android:key="multiButtonsPress"
+					android:title="@string/multi_buttons_press"
+					android:summary="@string/multi_buttons_press_summary"/>
+
+			<com.androidemu.snes.SeekBarPreference
+					android:key="multiButtonsPressThreshold"
+					android:title="@string/threshold"
+					android:dependency="multiButtonsPress"
+					androidemu:maxValue="10"
+					android:defaultValue="7"/>
+
+			<PreferenceCategory android:title="@string/appearance">
+				<ListPreference android:key="vkeypadSize"
+						android:title="@string/vkeypad_size"
+						android:entries="@array/vkeypad_size_entries"
+						android:entryValues="@array/vkeypad_size_entryvalues"
+						android:defaultValue="medium"/>
+
+				<com.androidemu.snes.SeekBarPreference
+						android:key="vkeypadTransparency"
+						android:title="@string/vkeypad_transparency"
+						android:defaultValue="50"/>
+
+				<PreferenceScreen android:key="hideControls"
+						android:title="@string/hide_controls">
+					<CheckBoxPreference android:key="hideDpad"
+							android:title="@string/hide_dpad"/>
+					<CheckBoxPreference android:key="hideButtons"
+							android:title="@string/hide_buttons"/>
+					<CheckBoxPreference android:key="hideSelectStart"
+							android:title="@string/hide_select_start"/>
+					<CheckBoxPreference android:key="hideShoulders"
+							android:title="@string/hide_shoulders"/>
+				</PreferenceScreen>
+			</PreferenceCategory>
+
+			<ListPreference android:key="vkeypadLayout"
+					android:title="@string/vkeypad_layout"
+					android:entries="@array/vkeypad_layout_entries"
+					android:entryValues="@array/vkeypad_layout_entryvalues"
+					android:defaultValue="top_bottom"/>
+		</PreferenceScreen>
+
+		<CheckBoxPreference android:key="enableLightGun"
+				android:title="@string/enable_light_gun"
+				android:summary="@string/enable_light_gun_summary"/>
+
+		<CheckBoxPreference android:key="enableTrackball"
+				android:title="@string/enable_trackball"
+				android:defaultValue="true"/>
+
+		<com.androidemu.snes.SeekBarPreference
+				android:key="trackballSensitivity"
+				android:title="@string/trackball_sensitivity"
+				android:dependency="enableTrackball"
+				androidemu:maxValue="5"
+				android:defaultValue="2"/>
+
+		<CheckBoxPreference android:key="enableSensor"
+				android:title="@string/enable_sensor"/>
+
+		<com.androidemu.snes.SeekBarPreference
+				android:key="sensorSensitivity"
+				android:dependency="enableSensor"
+				android:title="@string/sensor_sensitivity"
+				androidemu:maxValue="9"
+				android:defaultValue="7"/>
+	</PreferenceScreen>
+
+	<PreferenceScreen android:title="@string/netplay_settings">
+		<com.androidemu.snes.SeekBarPreference
+				android:key="maxFramesAhead"
+				android:title="@string/max_frames_ahead"
+				android:summary="@string/max_frames_ahead_summary"
+				androidemu:maxValue="10"/>
+
+		<CheckBoxPreference android:key="autoSyncClient"
+				android:title="@string/auto_sync_client"/>
+
+		<ListPreference android:key="autoSyncClientInterval"
+				android:dependency="autoSyncClient"
+				android:title="@string/auto_sync_client_interval"
+				android:entries="@array/auto_sync_client_entries"
+				android:entryValues="@array/auto_sync_client_entryvalues"
+				android:defaultValue="30"/>
+	</PreferenceScreen>
+
+	<PreferenceScreen android:title="@string/other_settings">
+		<PreferenceCategory android:title="@string/cheating">
+			<CheckBoxPreference android:key="enableCheats"
+					android:title="@string/enable_cheats"
+					android:defaultValue="true"/>
+		</PreferenceCategory>
+
+		<PreferenceCategory android:title="@string/user_settings">
+			<CheckBoxPreference android:key="flipScreen"
+					android:title="@string/flip_screen"
+					android:summary="@string/flip_screen_summary"/>
+			<ListPreference android:key="orientation"
+					android:title="@string/orientation"
+					android:summary="@string/orientation_summary"
+					android:entries="@array/orientation_entries"
+					android:entryValues="@array/orientation_entryvalues"
+					android:defaultValue="unspecified"/>
+			<CheckBoxPreference android:key="fullScreenMode"
+					android:title="@string/full_screen_mode"
+					android:summary="@string/full_screen_mode_summary"
+					android:defaultValue="true"/>
+			<CheckBoxPreference android:key="quickLoadOnStart"
+					android:title="@string/quick_load_on_start"
+					android:summary="@string/quick_load_on_start_summary"
+					android:defaultValue="true"/>
+
+			<CheckBoxPreference android:key="useInputMethod"
+					android:title="@string/use_input_method"
+					android:summary="@string/use_input_method_summary"/>
+
+			<PreferenceScreen android:title="@string/shortcut_keys">
+				<com.androidemu.snes.KeyPreference
+						android:key="quickLoad"
+						android:title="@string/quick_load"/>
+				<com.androidemu.snes.KeyPreference
+						android:key="quickSave"
+						android:title="@string/quick_save"/>
+				<com.androidemu.snes.KeyPreference
+						android:key="fastForward"
+						android:title="@string/fast_forward"/>
+				<com.androidemu.snes.KeyPreference
+						android:key="screenshot"
+						android:title="@string/screenshot"/>
+			</PreferenceScreen>
+		</PreferenceCategory>
+
+		<PreferenceCategory android:title="@string/advanced">
+			<CheckBoxPreference android:key="useCCore"
+					android:title="@string/c_core"
+					android:summary="@string/c_core_summary"/>
+		</PreferenceCategory>
+	</PreferenceScreen>
+
+	<PreferenceScreen android:title="@string/app_about">
+		<PreferenceScreen android:key="about"
+				android:title="@string/about"/>
+		<PreferenceScreen android:key="upgrade"
+				android:title="@string/upgrade"/>
+		<PreferenceScreen android:key="searchRoms"
+				android:title="@string/search_roms"/>
+	</PreferenceScreen>
+
+</PreferenceScreen>

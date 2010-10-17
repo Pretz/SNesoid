@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/menu_netplay_sync"
+			android:title="@string/netplay_sync"
+			android:icon="@drawable/ic_menu_refresh" />
+
+	<item android:id="@+id/menu_load_state"
+			android:title="@string/load_state"
+			android:icon="@android:drawable/ic_menu_set_as"
+			android:alphabeticShortcut="l" />
+
+	<item android:id="@+id/menu_save_state"
+			android:title="@string/save_state"
+			android:icon="@android:drawable/ic_menu_save"
+			android:alphabeticShortcut="t" />
+
+	<item android:id="@+id/menu_settings"
+			android:title="@string/settings"
+			android:icon="@android:drawable/ic_menu_preferences" />
+
+	<item android:id="@+id/menu_fast_forward"
+			android:icon="@drawable/ic_menu_fast_forward" />
+
+	<item android:id="@+id/menu_netplay_connect"
+			android:title="@string/netplay_connect"
+			android:icon="@drawable/ic_menu_netplay">
+		<menu>
+			<item android:id="@+id/menu_bluetooth_server"
+					android:title="@string/bluetooth_server"/>
+			<item android:id="@+id/menu_bluetooth_client"
+					android:title="@string/bluetooth_client"/>
+			<item android:id="@+id/menu_wifi_server"
+					android:title="@string/wifi_server"/>
+			<item android:id="@+id/menu_wifi_client"
+					android:title="@string/wifi_client"/>
+		</menu>
+	</item>
+
+	<item android:id="@+id/menu_netplay_disconnect"
+			android:title="@string/netplay_disconnect"
+			android:icon="@drawable/ic_menu_disconnect" />
+
+	<item android:id="@+id/menu_cheats"
+			android:title="@string/cheats"
+			android:icon="@android:drawable/ic_menu_view" />
+
+	<item android:id="@+id/menu_reset"
+			android:title="@string/reset"
+			android:icon="@android:drawable/ic_menu_revert" />
+
+	<item android:id="@+id/menu_screenshot"
+			android:title="@string/screenshot"
+			android:icon="@android:drawable/ic_menu_camera" />
+
+	<item android:id="@+id/menu_close"
+			android:title="@string/close"
+			android:icon="@android:drawable/ic_menu_close_clear_cancel" />
+</menu>
