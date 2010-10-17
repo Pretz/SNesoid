@@ -108,9 +108,12 @@
 	<string name="refresh_rate">Screen refresh rate</string>
 	<string name="refresh_rate_summary">MOTO Droid 2.1 users should set this to 30!</string>
 	<string name="enable_transparency">Enable transparency</string>
-	<string name="enable_transparency_summary">More accurate emulation (would run a bit slower)</string>
+	<string name="enable_transparency_summary">Enable layering transparency (would run a bit slower)</string>
+	<string name="enable_hires">Enable resolution change</string>
+	<string name="enable_hires_summary">Enable in-game resolution change on the fly</string>
 	<string name="input_settings">Input settings</string>
 	<string name="key_mappings">Key mappings</string>
+	<string name="key_mappings_summary">Map game keys to phone hardware buttons</string>
 	<string name="gamepad_1">Pad 1</string>
 	<string name="gamepad_2">Pad 2</string>
 	<string name="enable">Enable</string>
@@ -127,9 +130,12 @@
 	<string name="multitouch_unsupported">This phone does not support multi-touch!"</string>
 	<string name="dpad_4way">Disable D-pad diagonals</string>
 	<string name="dpad_deadzone">D-pad dead zone</string>
-	<string name="multi_buttons_press">Multi-buttons press</string>
-	<string name="multi_buttons_press_summary">Disable this if it does not work properly on your phone!</string>
-	<string name="threshold">Multi-buttons threshold</string>
+	<string name="two_buttons_press">Two-buttons press</string>
+	<string name="in_between_press">In-between press</string>
+	<string name="in_between_press_summary">Press in-between two buttons to simulate simultaneous press</string>
+	<string name="point_size_press">By point size</string>
+	<string name="point_size_press_summary">Determine by touch point size (does not work on all devices)</string>
+	<string name="point_size_press_threshold">Point size threshold</string>
 	<string name="appearance">Appearance</string>
 	<string name="vkeypad_size">Controls size</string>
 	<string name="vkeypad_transparency">Controls transparency</string>
@@ -141,7 +147,7 @@
 	<string name="vkeypad_layout">D-pad + buttons layout</string>
 	<string name="enable_trackball">Trackball as D-pad</string>
 	<string name="trackball_sensitivity">Trackball sensitivity</string>
-	<string name="enable_sensor">Sensor as left/right</string>
+	<string name="use_sensor">Use sensor as</string>
 	<string name="sensor_sensitivity">Sensor sensitivity</string>
 	<string name="netplay_settings">Net-play settings</string>
 	<string name="max_frames_ahead">Max frames ahead</string>
@@ -161,7 +167,7 @@
 	<string name="quick_load_on_start">Quick load on start</string>
 	<string name="quick_load_on_start_summary">Auto load game state on ROM start</string>
 	<string name="use_input_method">Use input method</string>
-	<string name="use_input_method_summary">Check this to enable special input device (eg. bluetooth gamepad)</string>
+	<string name="use_input_method_summary">Enable special input device (eg. bluetooth gamepad)</string>
 	<string name="advanced">Advanced</string>
 	<string name="c_core">Use \"C\" core</string>
 	<string name="c_core_summary">Runs more games (eg. Super Mario RPG) but in slower speed</string>
@@ -226,6 +232,12 @@
 		<item>40</item>
 		<item>50</item>
 		<item>60</item>
+	</string-array>
+
+	<string-array name="use_sensor_entries">
+		<item>None</item>
+		<item>D-Pad left/right</item>
+		<item>Trigger left/right</item>
 	</string-array>
 
 	<string-array name="vkeypad_size_entries">

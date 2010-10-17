@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 		package="com.androidemu.snes"
-		android:versionCode="67"
-		android:versionName="2.0.4"
+		android:versionCode="68"
+		android:versionName="2.1"
 		android:installLocation="preferExternal">
 
 	<uses-sdk android:minSdkVersion="3" />

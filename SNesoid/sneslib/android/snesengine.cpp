@@ -490,6 +490,9 @@ void SNesEngine::setOption(const char *name, const char *value)
 	} else if (strcmp(name, "transparencyEnabled") == 0) {
 		Settings.Transparency = (strcmp(value, "true") == 0);
 
+	} else if (strcmp(name, "enableHiRes") == 0) {
+		Settings.SupportHiRes = (strcmp(value, "true") == 0);
+
 	} else if (strcmp(name, "enableLightGun") == 0) {
 		Settings.SuperScope = (strcmp(value, "true") == 0);
 		if (Settings.SuperScope)

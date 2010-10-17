@@ -39,6 +39,11 @@
 					android:title="@string/enable_transparency"
 					android:summary="@string/enable_transparency_summary"
 					android:defaultValue="true"/>
+
+			<CheckBoxPreference android:key="enableHiRes"
+					android:title="@string/enable_hires"
+					android:summary="@string/enable_hires_summary"
+					android:defaultValue="true"/>
 		</PreferenceCategory>
 
 		<PreferenceCategory android:title="@string/frame_skip_settings">
@@ -72,7 +77,8 @@
 
 	<PreferenceScreen android:title="@string/input_settings">
 		<PreferenceScreen android:key="keyMappings"
-				android:title="@string/key_mappings">
+				android:title="@string/key_mappings"
+				android:summary="@string/key_mappings_summary">
 
 			<Preference android:key="gameGripper"
 					android:layout="@layout/game_gripper"/>
@@ -120,16 +126,22 @@
 					androidemu:maxValue="4"
 					android:defaultValue="2"/>
 
-			<CheckBoxPreference android:key="multiButtonsPress"
-					android:title="@string/multi_buttons_press"
-					android:summary="@string/multi_buttons_press_summary"/>
+			<PreferenceCategory android:title="@string/two_buttons_press">
+				<CheckBoxPreference android:key="inBetweenPress"
+						android:title="@string/in_between_press"
+						android:summary="@string/in_between_press_summary"/>
 
-			<com.androidemu.snes.SeekBarPreference
-					android:key="multiButtonsPressThreshold"
-					android:title="@string/threshold"
-					android:dependency="multiButtonsPress"
-					androidemu:maxValue="10"
-					android:defaultValue="7"/>
+				<CheckBoxPreference android:key="pointSizePress"
+						android:title="@string/point_size_press"
+						android:summary="@string/point_size_press_summary"/>
+
+				<com.androidemu.snes.SeekBarPreference
+						android:key="pointSizePressThreshold"
+						android:title="@string/point_size_press_threshold"
+						android:dependency="pointSizePress"
+						androidemu:maxValue="10"
+						android:defaultValue="7"/>
+			</PreferenceCategory>
 
 			<PreferenceCategory android:title="@string/appearance">
 				<ListPreference android:key="vkeypadSize"
@@ -178,12 +190,14 @@
 				androidemu:maxValue="5"
 				android:defaultValue="2"/>
 
-		<CheckBoxPreference android:key="enableSensor"
-				android:title="@string/enable_sensor"/>
+		<ListPreference android:key="useSensor"
+				android:title="@string/use_sensor"
+				android:entries="@array/use_sensor_entries"
+				android:entryValues="@array/use_sensor_entryvalues"
+				android:defaultValue="none"/>
 
 		<com.androidemu.snes.SeekBarPreference
 				android:key="sensorSensitivity"
-				android:dependency="enableSensor"
 				android:title="@string/sensor_sensitivity"
 				androidemu:maxValue="9"
 				android:defaultValue="7"/>

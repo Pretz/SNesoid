@@ -115,6 +115,7 @@ public class Emulator {
 			int key2, int duration2);
 	public native void fireLightGun(int x, int y);
 	public native void setOption(String name, String value);
+	public native int getOption(String name);
 
 	public native int getVideoWidth();
 	public native int getVideoHeight();

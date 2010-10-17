@@ -50,7 +50,8 @@ public class VirtualKeypad {
 	private boolean vibratorEnabled;
 	private boolean dpad4Way;
 	private float dpadDeadZone = DPAD_DEADZONE_VALUES[2];
-	private float multiButtonsPressThreshold;
+	private float pointSizeThreshold;
+	private boolean inBetweenPress;
 
 	private ArrayList<Control> controls = new ArrayList<Control>();
 	private Control dpad;
@@ -97,10 +98,12 @@ public class VirtualKeypad {
 		value = (value < 0 ? 0 : (value > 4 ? 4 : value));
 		dpadDeadZone = DPAD_DEADZONE_VALUES[value];
 
-		multiButtonsPressThreshold = 1.0f;
-		if (prefs.getBoolean("multiButtonsPress", false)) {
-			int threshold = prefs.getInt("multiButtonsPressThreshold", 7);
-			multiButtonsPressThreshold = (threshold / 10.0f) - 0.01f;
+		inBetweenPress = prefs.getBoolean("inBetweenPress", false);
+
+		pointSizeThreshold = 1.0f;
+		if (prefs.getBoolean("pointSizePress", false)) {
+			int threshold = prefs.getInt("pointSizePressThreshold", 7);
+			pointSizeThreshold = (threshold / 10.0f) - 0.01f;
 		}
 
 		dpad.hide(prefs.getBoolean("hideDpad", false));
@@ -173,7 +176,6 @@ public class VirtualKeypad {
 			makeBottomTop(w, h);
 			return;
 		}
-
 		dpad.move(0, 0);
 		buttons.move(w - buttons.getWidth(), 0);
 
@@ -289,7 +291,7 @@ public class VirtualKeypad {
 	private int getButtonsStates(float x, float y, float size) {
 		int states = BUTTONS_4WAY[get4WayDirection(x, y)];
 
-		if (size > multiButtonsPressThreshold) {
+		if (size > pointSizeThreshold) {
 			switch (states) {
 			case Emulator.GAMEPAD_Y:
 			case Emulator.GAMEPAD_B:

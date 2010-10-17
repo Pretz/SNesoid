@@ -90,6 +90,7 @@ public class EmulatorActivity extends Activity implements
 	private Keyboard keyboard;
 	private VirtualKeypad vkeypad;
 	private SensorKeypad sensor;
+	private int[] sensorMappings;
 	private boolean lightGunEnabled;
 	private boolean flipScreen;
 	private boolean inFastForward;
@@ -149,9 +150,10 @@ public class EmulatorActivity extends Activity implements
 			"soundEnabled",
 			"soundVolume",
 			"transparencyEnabled",
+			"enableHiRes",
 			"enableTrackball",
 			"trackballSensitivity",
-			"enableSensor",
+			"useSensor",
 			"sensorSensitivity",
 			"enableVKeypad",
 			"scalingMode",
@@ -509,6 +511,9 @@ public class EmulatorActivity extends Activity implements
 		} else if ("transparencyEnabled".equals(key)) {
 			emulator.setOption(key, prefs.getBoolean(key, false));
 
+		} else if ("enableHiRes".equals(key)) {
+			emulator.setOption(key, prefs.getBoolean(key, true));
+
 		} else if ("enableTrackball".equals(key)) {
 			emulatorView.setOnTrackballListener(
 					prefs.getBoolean(key, true) ?  this : null);
@@ -516,8 +521,9 @@ public class EmulatorActivity extends Activity implements
 		} else if ("trackballSensitivity".equals(key)) {
 			trackballSensitivity = prefs.getInt(key, 2) * 5 + 10;
 
-		} else if ("enableSensor".equals(key)) {
-			if (!prefs.getBoolean(key, false))
+		} else if ("useSensor".equals(key)) {
+			sensorMappings = getSensorMappings(prefs.getString(key, null));
+			if (sensorMappings == null)
 				sensor = null;
 			else if (sensor == null) {
 				sensor = new SensorKeypad(this);
@@ -572,9 +578,18 @@ public class EmulatorActivity extends Activity implements
 
 	public void onGameKeyChanged() {
 		int states = keyboard.getKeyStates();
-		if (sensor != null)
-			states |= sensor.getKeyStates();
 
+		if (sensor != null) {
+			int keys = sensor.getKeyStates();
+			if ((keys & SensorKeypad.LEFT) != 0)
+				states |= sensorMappings[0];
+			if ((keys & SensorKeypad.RIGHT) != 0)
+				states |= sensorMappings[1];
+			if ((keys & SensorKeypad.UP) != 0)
+				states |= sensorMappings[2];
+			if ((keys & SensorKeypad.DOWN) != 0)
+				states |= sensorMappings[3];
+		}
 		if (flipScreen)
 			states = flipGameKeys(states);
 
@@ -738,6 +753,28 @@ public class EmulatorActivity extends Activity implements
 		if (orientation.equals("portrait"))
 			return ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
 		return ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED;
+	}
+
+	private static final int[] SENSOR_MAP_DPAD = {
+		Emulator.GAMEPAD_LEFT,
+		Emulator.GAMEPAD_RIGHT,
+		Emulator.GAMEPAD_UP,
+		Emulator.GAMEPAD_DOWN,
+	};
+
+	private static final int[] SENSOR_MAP_TRIGGERS = {
+		Emulator.GAMEPAD_TL,
+		Emulator.GAMEPAD_TR,
+		0,
+		0
+	};
+
+	private static int[] getSensorMappings(String as) {
+		if ("dpad".equals(as))
+			return SENSOR_MAP_DPAD;
+		if ("triggers".equals(as))
+			return SENSOR_MAP_TRIGGERS;
+		return null;
 	}
 
 	private String getEmulatorEngine(SharedPreferences prefs) {

@@ -47,6 +47,12 @@
 		<item>60</item>
 	</string-array>
 
+	<string-array name="use_sensor_entryvalues">
+		<item>none</item>
+		<item>dpad</item>
+		<item>triggers</item>
+	</string-array>
+
 	<string-array name="vkeypad_size_entryvalues">
 		<item>large</item>
 		<item>medium</item>
