@@ -53,20 +53,22 @@ LOCAL_SRC_FILES += \
 #LOCAL_SRC_FILES += sa1.cpp
 #LOCAL_CFLAGS += -DUSE_SA1
 
-# All of the shared libraries we link against.
-LOCAL_SHARED_LIBRARIES := \
-	libutils \
-	libz
+# # All of the shared libraries we link against.
+# LOCAL_SHARED_LIBRARIES := \
+#   libutils \
+#   libz
 
 # Static libraries.
-LOCAL_STATIC_LIBRARIES := \
-	libunz
+# LOCAL_STATIC_LIBRARIES := \
+#   libunz
 
 # Also need the JNI headers.
 LOCAL_C_INCLUDES += \
 	$(JNI_H_INCLUDE) \
 	$(LOCAL_PATH)/../../common \
 	external/zlib
+
+LOCAL_LDLIBS := -lz -llog
 
 # Compiler flags.
 LOCAL_CFLAGS += -O3 -fvisibility=hidden

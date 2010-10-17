@@ -1,0 +1,5 @@
+gen
+bin/*
+/gen
+/obj
+libs/armeabi/*.so

@@ -58,15 +58,6 @@ LOCAL_SRC_FILES += \
 	android/file.cpp \
 	android/snesengine.cpp
 
-# All of the shared libraries we link against.
-LOCAL_SHARED_LIBRARIES := \
-	libutils \
-	libz
-
-# Static libraries.
-LOCAL_STATIC_LIBRARIES := \
-	libunz
-
 # Also need the JNI headers.
 LOCAL_C_INCLUDES += \
 	$(JNI_H_INCLUDE) \
@@ -76,6 +67,8 @@ LOCAL_C_INCLUDES += \
 
 # Compiler flags.
 LOCAL_CFLAGS += -O3 -fvisibility=hidden
+
+LOCAL_LDLIBS := -lz -llog
 
 LOCAL_CFLAGS += \
     -DVAR_CYCLES \
