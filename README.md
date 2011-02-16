@@ -14,8 +14,11 @@ Zhang Yong's emulators have a shared common library, which I have put up on gith
 I've fixed Zhang Yong's build system so once you've installed the [Android NDK](http://developer.android.com/sdk/ndk/index.html) (in addition to the Android SDK), you should be able to go into the SNesoid directory and execute
 
     $ ~/<path-to-NDK>/ndk-build
-    
+
 This will compile the native portions of the application: snes9x and the bridge to Android.  Once you've compiled the native components you should be able to compile and run the Android project via Eclipse or ant.
+
+### IMPORTANT NOTE FOR USERS OF THE LATEST NDK (r5b):
+There seems to be a weird problem with how NDK r5 handles assembly (.s) files causing the build to fail with a <code>mv: rename No such file or directory</code> error.  Repeatedly running ndk-build builds each successive assembly file, so by the fourth time you run ndk-build the app will build successfully.  I am still trying to find a fix for this.
 
 
 Future Work
