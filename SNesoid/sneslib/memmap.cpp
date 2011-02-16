@@ -42,7 +42,7 @@
 #include <ctype.h>
 
 #ifdef __linux
-//#include <unistd.h>
+#include <unistd.h>
 #endif
 
 #include "snes9x.h"

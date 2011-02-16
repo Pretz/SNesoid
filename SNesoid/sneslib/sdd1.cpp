@@ -45,7 +45,7 @@
 #include "display.h"
 
 #ifdef __linux
-//#include <unistd.h>
+#include <unistd.h>
 #endif
 
 void S9xSetSDD1MemoryMap (uint32 bank, uint32 value)
